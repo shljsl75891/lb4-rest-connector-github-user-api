@@ -1,0 +1,23 @@
+{
+  "name": "github",
+  "connector": "rest",
+  "crud": false,
+  "options": {
+    "baseURL": "https://api.github.com",
+    "headers": {
+      "user-agent": "github-fetcher",
+      "content-type": "application/json"
+    }
+  },
+  "operations": [
+    {
+      "template": {
+        "method": "GET",
+        "url": "https://api.github.com/users/{username}"
+      },
+      "functions": {
+        "getDetails": ["username"]
+      }
+    }
+  ]
+}
